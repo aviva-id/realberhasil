@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - KATALOG</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">KATALOG<span>.</span></div>
+        <nav>
+            <a href="another_index1.html">Kembali ke Katalog</a>
+        </nav>
+    </header>
+
+    <main class="checkout-container">
+        <div class="checkout-header">
+            <h1>Checkout</h1>
+        </div>
+
+        <div class="checkout-content">
+            <!-- DAFTAR ITEM KERANJANG -->
+            <div id="cart-list" class="cart-list">
+                <!-- Item di-generate lewat JS -->
+            </div>
+
+            <!-- RINGKASAN TOTAL -->
+            <div class="summary-box">
+                <h2>Rincian Pembayaran</h2>
+                <hr>
+                <div class="summary-row">
+                    <span>Total Subtotal</span>
+                    <span id="subtotal-price">Rp 0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Pengiriman</span>
+                    <span>Gratis</span>
+                </div>
+                <hr>
+                <div class="summary-row total">
+                    <span>Total Pembayaran</span>
+                    <span id="total-price">Rp 0</span>
+                </div>
+
+                <button class="buy-btn checkout-btn" onclick="processPayment()">PROSES PEMBAYARAN</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 FASHION. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function renderCheckout() {
+            const cartListContainer = document.getElementById('cart-list');
+            const subtotalElement = document.getElementById('subtotal-price');
+            const totalElement = document.getElementById('total-price');
+
+            let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            if (cart.length === 0) {
+                cartListContainer.innerHTML = '<p class="empty-cart">Keranjang kamu kosong.</p>';
+                subtotalElement.textContent = 'Rp 0';
+                totalElement.textContent = 'Rp 0';
+                return;
+            }
+
+            cartListContainer.innerHTML = '';
+            let totalAmount = 0;
+
+            cart.forEach((item, index) => {
+                // Parse harga (mengubah "Rp 249.000" menjadi angka 249000)
+                let numericPrice = parseInt(item.price.replace(/[^0-9]/g, '')) || 0;
+                totalAmount += numericPrice;
+
+                const itemCard = document.createElement('div');
+                itemCard.className = 'cart-item';
+                itemCard.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
+                        <p class="size">Size: ${item.size}</p>
+                        <p class="price">${item.price}</p>
+                    </div>
+                    <button class="remove-btn" onclick="removeItem(${index})">Hapus</button>
+                `;
+                cartListContainer.appendChild(itemCard);
+            });
+
+            const formattedTotal = 'Rp ' + totalAmount.toLocaleString('id-ID');
+            subtotalElement.textContent = formattedTotal;
+            totalElement.textContent = formattedTotal;
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cart));
+            renderCheckout();
+        }
+
+        function processPayment() {
+            alert('Terima kasih! Pesanan Anda berhasil diproses.');
+            localStorage.removeItem('cartItems');
+            window.location.href = 'another_index1.html';
+        }
+
+        window.onload = renderCheckout;
+    </script>
+</body>
+</html>

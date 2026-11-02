@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>The Shop</title>
+
+    <link rel="stylesheet" href="stlye.css" 
+    href="{{ url_for('reference', filename='style.css') }}"> <!--penting-->
+</head>
+
+<body>
+    <!-- Navbar -->
+
+    <header class="navbar">
+        <div class="logo">LOGO<span>.</span></div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about">Tentang</a>
+            <a href="#service">Layanan</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Pakaian Modern untuk Aktivitas Premium
+            </h1>
+
+            <p>
+                Pakaian atletik dengan teknologi tinggi dan peralatan olahraga premium
+                jelajahi sekarang
+            </p>
+
+            <button onclick="window.location.href='another_index1.html'">
+                View all Product
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about">
+
+        <h2>Tentang Kami</h2>
+
+        <p>
+            Menghadirkan koleksi pakaian atletik berteknologi
+             tinggi dan peralatan olahraga premium untuk mendukung
+              setiap detik aktivitas Anda.
+        </p>
+
+    </section>
+
+
+    <!-- Service -->
+    <section id="service" class="service">
+
+        <h2>Layanan</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <h3>Pakaian atletik</h3>
+                <p>
+                    lorem impsum dolor sit amet
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h3>Pakaian Eropa</h3>
+                <p>
+                    lorem impsum dolor sit amet
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h3>Olahraga</h3>
+                <p>
+                    lorem impsum dolor sit amet
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <h2>Kontak</h2>
+
+        <p>
+            Email: sportopia@gmail.com
+        </p>
+
+        <p>
+            Telepon: 666-666-666
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 MyWebsite. All Rights Reserved.
+        </p>
+
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

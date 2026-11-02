@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fashion Catalog</title>
+
+    <link rel="stylesheet" href="styes2.css">
+    <link rel="stylesheet" href="styles3.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">KATALOG<span>.</span></div>
+
+        <nav>
+            <a href="#Gen">Man</a>
+            <a href="#europe">Woman</a>
+            <a href="#sport">Sport</a>
+            <a href="index.html">Main Page</a>
+        </nav>
+    </header>
+
+
+    <!-- SUNNY -->
+    <section class="catalog-section sunny" id="sunny">
+
+        <div class="section-title">
+            <p>COLLECTION 01</p>
+            <h1>Man</h1>
+            <span>Fresh style for sunny days.</span>
+        </div>
+
+        <div class="catalog">
+
+            <button class="nav-btn prev" onclick="changeProduct('sunny', -1)">
+            ←
+            </button>
+
+            <div class="product-image">
+                <img id="sunny-image" src="" alt="Sunny product">
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-number" id="sunny-number"></p>
+
+                <h2 id="sunny-name"></h2>
+
+                <p class="price" id="sunny-price"></p>
+
+                <p class="description" id="sunny-description"></p>
+
+                <div class="sizes">
+                    <span>SIZE</span>
+                         <button type="button" onclick="selectSize(this)">S</button>
+                         <button type="button" onclick="selectSize(this)">M</button>
+                         <button type="button" onclick="selectSize(this)">L</button>
+                         <button type="button" onclick="selectSize(this)">XL</button>
+                </div>
+
+                <button class="buy-btn" onclick="addToCart('sunny')">ADD TO CART</button>
+
+            </div>
+
+            <button class="nav-btn next" onclick="changeProduct('sunny', 1)">
+                →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- EUROPE -->
+    <section class="catalog-section europe" id="europe">
+
+        <div class="section-title">
+            <p>COLLECTION 02</p>
+            <h1>Woman</h1>
+            <span>Classic European fashion.</span>
+        </div>
+        
+        <div class="catalog">
+
+            <button class="nav-btn prev" onclick="changeProduct('europe', -1)">
+                ←
+            </button>
+
+            <div class="product-image">
+                <img id="europe-image" src="" alt="Europe product">
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-number" id="europe-number"></p>
+
+                <h2 id="europe-name"></h2>
+
+                <p class="price" id="europe-price"></p>
+
+                <p class="description" id="europe-description"></p>
+
+                <<div class="sizes">
+                    <span>SIZE</span>
+                         <button type="button" onclick="selectSize(this)">S</button>
+                         <button type="button" onclick="selectSize(this)">M</button>
+                         <button type="button" onclick="selectSize(this)">L</button>
+                         <button type="button" onclick="selectSize(this)">XL</button>
+                </div>
+
+                <button class="buy-btn" onclick="addToCart('europe')">ADD TO CART</button>
+
+            </div>
+
+            <button class="nav-btn next" onclick="changeProduct('europe', 1)">
+                →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- SPORT -->
+    <section class="catalog-section sport" id="sport">
+
+        <div class="section-title">
+            <p>COLLECTION 03</p>
+            <h1>sport</h1>
+            <span>Move freely. Perform better.</span>
+        </div>
+
+        <div class="catalog">
+
+            <button class="nav-btn prev" onclick="changeProduct('sport', -1)">
+                ←
+            </button>
+
+            <div class="product-image">
+                <img id="sport-image" src="" alt="Sport product">
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-number" id="sport-number"></p>
+
+                <h2 id="sport-name"></h2>
+
+                <p class="price" id="sport-price"></p>
+
+                <p class="description" id="sport-description"></p>
+
+                <div class="sizes">
+                    <span>SIZE</span>
+                         <button type="button" onclick="selectSize(this)">S</button>
+                         <button type="button" onclick="selectSize(this)">M</button>
+                         <button type="button" onclick="selectSize(this)">L</button>
+                         <button type="button" onclick="selectSize(this)">XL</button>
+                </div>
+
+                <button class="buy-btn" onclick="addToCart('sport')">ADD TO CART</button>
+
+            </div>
+
+            <button class="nav-btn next" onclick="changeProduct('sport', 1)">
+                →
+            </button>
+
+        </div>
+
+    </section>
+
+    
+
+<!--bagian checkout-->
+
+    <!-- NAVBAR -->
+
+    <main class="checkout-container">
+        <div class="checkout-header">
+            <h1>Checkout</h1>
+        </div>
+        <section class="shopping-cart" id="shopping-cart">
+    <h2>Shopping Cart</h2>
+
+    <div id="cart-items">
+        <p>Keranjang masih kosong.</p>
+    </div>
+
+    <h3>Total: <span id="cart-total">Rp0</span></h3>
+
+    <button class="buy-btn" onclick="checkoutCart()">
+        CHECKOUT NOW
+    </button>
+
+    </main>
+
+    <footer>
+        <p>© 2026 FASHION. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script2.js"></script>
+    
+
+</body>
+</html>
